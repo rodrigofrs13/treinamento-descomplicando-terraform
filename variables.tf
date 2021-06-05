@@ -5,7 +5,7 @@ variable "region" {
 
 variable "name" {
   description = "Name of the Application"
-  default = "server02000"
+  default = "server02"
 }
 
 variable "env" {
