@@ -1,2 +1,2 @@
-# repo-aws-ec2-simples
-repo-aws-ec2-simples
+# Treinamento Descomplicando Terraform
+Treinamento Descomplicando Terraform
