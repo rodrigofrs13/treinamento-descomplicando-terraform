@@ -13,10 +13,10 @@ variable "env" {
   default = "prod"
 }
 
-variable "ami" {
-  description = "AWS AMI to be used "
-  default = "ami-07ebfd5b3428b6f4d"
-}
+#variable "ami" {
+#  description = "AWS AMI to be used "
+#  default = "ami-07ebfd5b3428b6f4d"
+#}
 
 variable "instance_type" {
   description = "AWS Instance type defines the hardware configuration of the machine"
