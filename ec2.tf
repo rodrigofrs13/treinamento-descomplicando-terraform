@@ -21,3 +21,8 @@ resource "aws_instance" "server" {
     Provisioner = "Terraform"
   }
 }
+
+resource "aws_instance" "foo" {
+  instance_type = "t2.micro"
+  ami = "ami-0aeeebd8d2ab47354"
+}
