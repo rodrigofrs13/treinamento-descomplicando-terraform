@@ -14,6 +14,9 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
+  depends_on = [
+    aws_instance.foo
+  ]
 
   tags = {
     Name        = var.name
@@ -25,4 +28,15 @@ resource "aws_instance" "server" {
 resource "aws_instance" "foo" {
   instance_type = "t2.micro"
   ami = "ami-0aeeebd8d2ab47354"
+  tags = {
+    Name        = "foo"
+    Environment = var.env
+    Provisioner = "Terraform"
+  }
+}
+
+resource "aws_eip" "ip" {
+  vpc = true
+  instance = aws_instance.server.id
+  
 }

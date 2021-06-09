@@ -11,5 +11,6 @@ terraform {
     key    = "descomplicandoterraform/terraform.state"
     region = "us-east-1" //não pode ser variavel
     profile = "default"
+    encrypt = true
   }
 }
