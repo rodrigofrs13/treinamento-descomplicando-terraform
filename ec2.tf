@@ -2,7 +2,7 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name = "name"
+    name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
 
   }
@@ -27,7 +27,7 @@ resource "aws_instance" "server" {
 
 resource "aws_instance" "foo" {
   instance_type = "t2.micro"
-  ami = "ami-0aeeebd8d2ab47354"
+  ami           = "ami-0aeeebd8d2ab47354"
   tags = {
     Name        = "foo"
     Environment = var.env
@@ -36,7 +36,7 @@ resource "aws_instance" "foo" {
 }
 
 resource "aws_eip" "ip" {
-  vpc = true
+  vpc      = true
   instance = aws_instance.server.id
-  
+
 }
